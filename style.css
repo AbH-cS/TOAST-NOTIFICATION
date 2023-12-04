@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f7edff;
+    overflow: hidden;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    padding: 55px 55px;
+}
+
+.buttons button {
+    background: #333;
+    color: #fff;
+    width: 120px;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+#toastBox {
+    flex-direction: column;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 0 20px rgb(0 0 0 / 30%);
+    width: 400px;
+    height: 80px;
+    margin: 30px;
+    position: relative;
+    transform: translateX(100%);
+    animation: smooth 0.5s linear forwards;
+}
+
+@keyframes smooth {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.toast i {
+    font-size: 35px;
+    margin: 0 20px;
+    color: green;
+}
+
+.toast.error i {
+    color: red;
+}
+
+.toast.invalid i {
+    color: orange;
+}
+
+.toast::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: green;
+    height: 4px;
+    width: 100%;
+    animation: anime 6s linear forwards;
+}
+
+@keyframes anime {
+    100% {
+        width: 0;
+    }
+}
+
+.toast.error::after {
+    background-color: red;
+}
+
+.toast.invalid::after {
+    background-color: orange;
+}
